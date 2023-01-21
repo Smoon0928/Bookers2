@@ -1,4 +1,12 @@
 class UsersController < ApplicationController
-    def 
+    def edit
+     @User = User.find(params[:id])
+    end
+    
+    def index
+    end  
+    
+    def updadte
+        
     end
 end
