@@ -1,0 +1,45 @@
+<main>
+  <div class="container px-5 px-sm-0">
+    <div class="row">
+      <div class="col-mb-3">
+        <h2>User info</h2>
+        
+        <% if @user.image.attached? %>
+          <%= image_tag @user.image, size: "100x100" %>
+        <% else %>
+          <%= image_tag 'no_image', size: "100x100" %>
+        <% end %>
+        
+        <table class="table">
+          <tbody>
+            <%= form_with model: @user do |f| %>
+             <tr></tr>
+             <tr>
+               <th>name</th>
+               <th><%= f.text_field :name %></th>
+             </tr>
+             <tr>
+               <th>introduction</th>
+               <th><%= f.text_area :body %></th>
+             </tr>
+             
+           </tbody>
+         </table>
+         <div class="row">
+         <%= link_to edit_user_path(current_user.id),class:"btn btn-outline-secondary btn-block" do %>
+         <i class="fas fa-user-cog"></i>
+         <% end %>
+         </div>
+         
+         
+         <h1>New book</h1>
+           <%= form_with model: Book.new do |f| %>
+            <h4>Title</h4>
+            <%= f.text_field :title %>
+          	
+            <h4>Opinion</h4>
+            <%= f.text_area :body %>
+          	
+            <%= f.submit 'Createook' %>
+          <% end %>
+  </main>
