@@ -39,10 +39,22 @@
             <%= f.text_area :body %>
           	
             <%= f.submit 'Createook' %>
-          <% end %>
+    <% end %>
           
-          
-          
+    <div class="col-md-8 offset-md-1">
+      <h2>Books</h2>
+      <%= @books.each do |book| %>
+      <table class="table table-hover table-inverse">
+        <thead>
+          <tr>
+            <th><%= @book.title %></th>
+          </tr>
+            <th><%= @book.opinion %></th>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <% end %>
+    </div>
           
           
   </main>
