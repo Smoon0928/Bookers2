@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get "homes/about" => 'homes#about'
   
   get '/users'=>'users#index',as: 'users_index'
-  post '/users/:id/edit'=> 'users#edit'
+  post '/users/:id/edit'=> 'users#edit',as: 'users_edit'
   
   resources :books
   resources :users

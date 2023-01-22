@@ -12,17 +12,15 @@
         
         <table class="table">
           <tbody>
-            <%= form_with model: @user do |f| %>
              <tr></tr>
              <tr>
                <th>name</th>
-               <th><%= f.text_field :name %></th>
+               <th><%= @user.name %></th>
              </tr>
              <tr>
                <th>introduction</th>
-               <th><%= f.text_area :body %></th>
+               <th><%= @user.introduction %></th>
              </tr>
-             
            </tbody>
          </table>
          <div class="row">
@@ -42,4 +40,9 @@
           	
             <%= f.submit 'Createook' %>
           <% end %>
+          
+          
+          
+          
+          
   </main>

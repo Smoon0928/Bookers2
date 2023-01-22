@@ -8,7 +8,9 @@ class UsersController < ApplicationController
     end  
     
     def create
-     @user = User.new(user_params)
+     @book = Book.new(params[:id])
+     user.save
+     redirect_to users_path(user.id)
     end
     
     def update
@@ -18,6 +20,10 @@ class UsersController < ApplicationController
      else
         render :edit
     end
+   end
+   
+   def index
+    @books = Book.all
    end
     
     private
