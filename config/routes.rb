@@ -4,11 +4,6 @@ Rails.application.routes.draw do
   root 'homes#top'
   get "homes/about" => 'homes#about'
   
-  get '/users'=>'users#index',as: 'users_index'
-  post '/users/:id/edit'=> 'users#edit',as: 'users_edit'
-
-  post '/books/:id' =>'books#create', as: 'books_create'
-  
   resources :books
   resources :users
 end
