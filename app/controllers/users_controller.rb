@@ -9,9 +9,6 @@ class UsersController < ApplicationController
      @user = User.find(params[:id])
     end  
     
-    
-    
-    
     def update
      @user = User.find(params[:id])
      if @user.update(user_params)
@@ -22,8 +19,10 @@ class UsersController < ApplicationController
     end
    
    def index
-    @books = Book.all
-   end
+     @user = User.find(current_user.id)
+     @books = Book.all
+     @book = Book.new
+    end
     
     private
     def user_params
