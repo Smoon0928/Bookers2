@@ -16,6 +16,5 @@ class User < ApplicationRecord
   end
   
   validates :name,length: {minimum: 2}
-  validates :title, presence: true
-  validates :body, presence: true
+  
 end

@@ -1,4 +1,4 @@
-<main>
+<script src="https://kit.fontawesome.com/50474a9a7c.js" crossorigin="anonymous"></script>
   <p id="notice"></p>
   <div class="container">
     <div class="row">
@@ -13,7 +13,7 @@
             <% end %>
           </ul>
         <% end %>
-        <%= form_with model: @user do |f| %>
+        <%= form_with model: @user, url: user_path, method: :patch do |f| %>
           <label for="user_name">Name</label>
           <br>
           <%= f.text_field :name %>
@@ -33,4 +33,3 @@
       </div>
     </div>
   </div>
-</main>
