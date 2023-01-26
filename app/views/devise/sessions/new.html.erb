@@ -1,4 +1,4 @@
-<main>
+<script src="https://kit.fontawesome.com/50474a9a7c.js" crossorigin="anonymous"></script>
   <p id="notice"></p>
   <div class="container">
     <div class="row">
@@ -24,12 +24,12 @@
           <% end %>
         
           <div class="actions">
-            <%= f.submit "Log in" %>
+            <%= f.submit "Log in",class:"btn btn-primary" %>
           </div>
         <% end %>
+        <%= render "devise/shared/links" %>
       </div>
     </div>
   </div>
-</main>
+
         
-<%= render "devise/shared/links" %>
