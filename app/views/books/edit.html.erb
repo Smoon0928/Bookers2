@@ -4,15 +4,24 @@
     <div class="row">
       <div class="col-sm-12 col-md-8 cok-lg-5 px-5 px-sm-0 mx-auto">
          <h1>Editing Book</h1>
+         
          <%= form_with model: @book do |f| %>
-         <h4>Title</h4>
-         <%= f.text_field :title %>
-         <h4>Opinion</h4>
-         <%= f.text_area :body %>
-         <br>
+         <div class="form-group">
+           <label for="book_title">Title</label>
+           <%= f.text_field :title %>
+         </div>
+         <div class="form-group">
+           <label for="book_opoinion">Opinion</label>
+           <%= f.text_area :body %>
+         </div>
+         
+        
          <%= f.submit 'Update Book' %>
          <br>
          <%= link_to 'show', book_path %>
          |
          <%= link_to 'Back', books_path %>
          <% end %>
+      </div>
+    </div>
+  <div>

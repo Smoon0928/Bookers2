@@ -1,37 +1,30 @@
 <script src="https://kit.fontawesome.com/50474a9a7c.js" crossorigin="anonymous"></script>
 <%= flash[:notice] %>
-
 <%= render 'users/list',user:@user %>
     
-    
-    <div class="col-md-8 offset-md-1">
-      <h2>Book detail</h2>
-      
+  <div class="col-md-8 offset-md-1">
+    <h2>Book detail</h2>
       <table class="table">
         <tbody>
           <tr>
             <td>
               <%= image_tag @user.get_profile_image(100,100) %> <br>
-           
               <%= link_to @user.name, user_path(@user) %>
             </td>
             <td>
-                
             <td>
               <%= link_to @book.title, book_path %>
             </td>
-            
             <td>
               <%= @book.body %>
             </td>
-            
-                
-            <% if @book.user == current_user %>
-              <td>
-                <%=link_to "edit",edit_book_path %>
-              </td>
-              <td>
-                <%= link_to "destroy", book_path(@book.id), method: :delete %>
+              <% if @book.user == current_user %>
+            <td>
+              <%= link_to 'Edit', edit_book_path,class:"btn btn-success" %>
+              </div>
+            </td>
+            <td>
+              <%= link_to "Destroy", book_path(@book.id), method: :delete, class:"btn btn-danger" %>
               </td>
             <% end %>
             
