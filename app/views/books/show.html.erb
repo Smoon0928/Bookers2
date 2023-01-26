@@ -1,7 +1,10 @@
 <%= flash[:notice] %>
 
 <%= render 'users/list',user:@user %>
-    
+
+<% if @book.user == current_user %>
+  <%= render 'otherlist',user:@user %>
+<% end %>
     
     
     
