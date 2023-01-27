@@ -15,13 +15,16 @@
            <%= f.text_area :body %>
          </div>
          
+          <div class="form-group">
+          	  <%= f.submit 'Update Book',class: "btn btn-success" %>
+          	  <% end %>
+          </div>
         
-         <%= f.submit 'Update Book' %>
          <br>
-         <%= link_to 'show', book_path %>
+         <%= link_to 'Show', book_path %>
          |
          <%= link_to 'Back', books_path %>
-         <% end %>
+         </br>
       </div>
     </div>
-  <div>
+  </div>

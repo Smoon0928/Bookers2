@@ -1,36 +1,29 @@
 <script src="https://kit.fontawesome.com/50474a9a7c.js" crossorigin="anonymous"></script>
 <%= render 'list',user:@user %>
 
+<p id="notice"></p>
 
-          
     <div class="col-md-8 offset-md-1">
       <h2>Users</h2>
       
-      <table class="table table-hover table-inverse">
+      <table class="table">
         <thead>
           <tr>
-            <th></th>
             <th>image</th>
             <th>name</th>
             <th colspan="3"></th>
-            </tr>
-            <% @users.each do |user| %>
-            </thead>
-            <tbody>
-            <tr>
-             <td><%= image_tag user.get_profile_image(100,100) %></td>
-
-               
-
-             <td><%= user.name %></td>
-            
-            
-             <td><%= link_to 'Show',user_path(user.id) %></td>
           </tr>
-          <% end %>
-         </tbody>
+        </thead>
+            <tbody>
+              <% @users.each do |user| %>
+                <tr>
+                   <td><%= image_tag user.get_profile_image(100,100) %></td>
+                   <td><%= user.name %></td>
+                   <td><%= link_to 'Show',user_path(user.id) %></td>
+                </tr>
+              <% end %>
+            </tbody>
        </table>
     </div>
           
   
-  </main>
